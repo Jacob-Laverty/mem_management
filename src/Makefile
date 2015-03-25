@@ -9,7 +9,7 @@ INCLUDES = -I$(IDIR)
 
 LANGUAGE = $(IDIR)/lang.l
 
-SRCS = 
+SRCS = timer.c simulation_utils.c memory_block.c memory.c lts.c simulation_manager.c simulation.c
 
 OBJDIR = ./obj
 OBJECTS = $(SRCS:.c=.o)
