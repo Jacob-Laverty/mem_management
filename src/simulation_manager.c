@@ -4,6 +4,7 @@ void initialize_simulation(char* input, char* output) {
   set_output(output);
   set_input(input);
   init_timer();
+  init_memory_manager();
   init_lts();
 }
 

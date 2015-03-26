@@ -5,7 +5,7 @@
 #include "tokens.h"
 
 #define MAX_PROCESSES 20
-#define DEBUG 0
+#define DEBUG 1
 
 //Defines for reading files with lex.
 int yylex();
@@ -20,4 +20,7 @@ void set_output(char* file);
 void write_to_output(char* output);
 int read_input();
 void debug(char* debug);
+
+char* get_token();
+int get_token_value();
 #endif

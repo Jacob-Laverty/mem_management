@@ -1,13 +1,15 @@
 MEMORY_SIZE       ^("Memory Size: ") 
 MANAGEMENT_POLICY ^("Memory Management Policy: ")
 POLICY_PARAM      ^("Policy Parameter: ") 
-PROCESS_ID        ^("Process ID: ")
+PROCESS_ID        ^("Process Id: ")
 ARRIVAL_TIME      ^("Arrival Time: ") 
 LIFETIME          ^("Lifetime in Memory: ")
 ADDRESS_SPACE     ^("Address Space: ")
-EOL [0-9]+$
+VSP               ("VSP")
+PAG               ("PAG")
+SEG               ("SEG")
+EOL               [0-9]+$
 %%
-
 {MEMORY_SIZE}       return (1);
 {MANAGEMENT_POLICY} return (2);
 {POLICY_PARAM}      return (3);
@@ -15,8 +17,10 @@ EOL [0-9]+$
 {ARRIVAL_TIME}      return (5);
 {LIFETIME}          return (6);
 {ADDRESS_SPACE}     return (7);
-{EOL}               return (8);
-
+{VSP}               return (8);
+{PAG}               return (9);
+{SEG}               return (10);
+{EOL}               return (11);
 %%
 
 void yerror() {
@@ -24,4 +28,6 @@ void yerror() {
   exit(0);
 }
 
-int yywrap() {}
+int yywrap() {
+  return 0;
+}

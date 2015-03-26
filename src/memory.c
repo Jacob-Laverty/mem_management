@@ -1,11 +1,23 @@
 #include "memory.h"
 
-void mb_init_memory_block() {
-  memory_head = malloc(sizeof(MemoryNode*));
-  memory_tail = malloc(sizeof(MemoryNode*));
+void init_memory() {
+  int token;
+  while((token = read_input()) != -1) {
+    switch(token) {
+      case MEMORY_SIZE:
+        debug("Setting memory size\n");
+        char* mem_size = get_token_value();
+        MAX_SIZE = atoi(mem_size);
+        break;
+      case MEMORY_POLICY:
+        break;
+      case POLICY:
+        break;
+    }
+  }
 }
 
-void mb_insert(MemoryNode* node, MemoryBlock* block) {
+void mem_insert(MemoryNode* node, MemoryBlock* block) {
   MemoryNode* new = malloc(sizeof(MemoryNode*));
   new -> block = malloc(sizeof(MemoryBlock*));
 
@@ -21,7 +33,7 @@ void mb_insert(MemoryNode* node, MemoryBlock* block) {
   new -> next = n;
 }
 
-void mb_remove(MemoryNode* node) {
+void mem_remove(MemoryNode* node) {
   MemoryNode* p = node -> prev;
   MemoryNode* n = node -> next;
 

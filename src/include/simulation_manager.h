@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "timer.h"
+#include "lts.h"
+#include "memory_manager.h"
 #include "simulation_utils.h"
 
 /*

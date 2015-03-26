@@ -10,7 +10,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "memory_block.h"
+#include "simulation_utils.h"
 
+static int MAX_SIZE;
 //Defining the node in the "memory linked list"
 typedef struct MemoryNodeStruct {
   MemoryBlock* block;
@@ -23,9 +25,8 @@ MemoryNode* memory_head;
 MemoryNode* memory_tail;
 
 //Operators for the memory list
-void mb_insert(MemoryNode* node, MemoryBlock* block);
-void mb_remove(MemoryNode* node);
+void mem_insert(MemoryNode* node, MemoryBlock* block);
+void mem_remove(MemoryNode* node);
 
-//initial setup of the memory_block_h
-void mb_init_memory_block();
+void init_memory();
 #endif

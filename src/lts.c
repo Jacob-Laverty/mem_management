@@ -6,9 +6,9 @@ void init_lts() {
   //space to be zero-d
   zero = (MemoryBlock*) calloc(MAX_PROCESSES, sizeof(MemoryBlock*));
   int token;
-  while((token = read_input) != -1) {
+  while((token = read_input()) != -1) {
     switch(token) {
-      case 0:
+      case LEX_EOF:
         break;
     }
   }
