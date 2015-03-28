@@ -18,8 +18,7 @@ typedef struct MemoryManagerStruct {
 } MemoryManager;
 
 //Start of memory
-MemoryNode* head;
-
+MemoryNode* mem_head;
 //The policy
 MemoryManagerPolicy mem_policy;
 //The policy parameter

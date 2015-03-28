@@ -12,7 +12,6 @@
 #include "memory_block.h"
 #include "simulation_utils.h"
 
-static int MAX_SIZE;
 //Defining the node in the "memory linked list"
 typedef struct MemoryNodeStruct {
   MemoryBlock* block;
@@ -20,13 +19,7 @@ typedef struct MemoryNodeStruct {
   struct MemoryNodeStruct* prev;
 } MemoryNode;
 
-//Head and tail of memory list
-MemoryNode* memory_head;
-MemoryNode* memory_tail;
-
 //Operators for the memory list
 void mem_insert(MemoryNode* node, MemoryBlock* block);
 void mem_remove(MemoryNode* node);
-
-void init_memory();
 #endif

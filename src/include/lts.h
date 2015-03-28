@@ -6,8 +6,9 @@
 
 #include "simulation_utils.h"
 #include "memory_block.h"
+#include "memory_manager.h"
 
-MemoryBlock* zero;
+MemoryBlock* block_ptr;
 
 void init_lts();
 void send_to_memory();

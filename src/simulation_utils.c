@@ -24,7 +24,7 @@ int get_token_value() {
 void write_to_output(char* output) {}
 
 void debug(char* debug) {
-#ifdef DEBUG
+#if DEBUG
   printf("DEBUG: %s", debug);
 #endif
 }

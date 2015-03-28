@@ -3,12 +3,29 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define MB_PID()
-#define MB_ARRIVAL()
-#define MB_LIFETIME()
-#define MB_ADDRESS()
+#define OCCUPIED_BLOCK  0x0000000000000001
+#define PID_BLOCK       0x000000000000003E
+#define ADDRESS_BLOCK   0x00000000003FFFC0
+#define ARRIVAL_BLOCK   0x0000003FFFC00000
+#define LIFETIME_BLOCK  0x003FFFC000000000
+
+#define PID_SHIFT 1
+#define ADDRESS_SHIFT 6
+#define ARRIVAL_SHIFT 22
+#define LIFETIME_SHIFT 38
+
+#define SET_OCCUPIED(X, Y) (X | Y)
+#define SET_PID(X, Y) (X | (Y << PID_SHIFT))
+#define SET_ADDRESS(X, Y) (X | (Y << ADDRESS_SHIFT))
+#define SET_ARRIVAL(X, Y) (X | (Y << ARRIVAL_SHIFT))
+#define SET_LIFETIME(X, Y) (X | (Y << LIFETIME_SHIFT))
+
+#define MB_OCCUPIED(X) (X & OCCUPIED_BLOCK)
+#define MB_PID(X)      ((X & PID_BLOCK) >> PID_SHIFT)
+#define MB_ADDRESS(X)  ((X & ADDRESS_BLOCK) >> ADDRESS_SHIFT)
+#define MB_ARRIVAL(X)  ((X & ARRIVAL_BLOCK) >> ARRIVAL_SHIFT)
+#define MB_LIFETIME(X) ((X & LIFETIME_BLOCK) >> LIFETIME_SHIFT)
 
 typedef long long MemoryBlock;
-
-
 #endif
+

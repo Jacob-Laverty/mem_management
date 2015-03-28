@@ -5,6 +5,7 @@
 #include "tokens.h"
 
 #define MAX_PROCESSES 20
+#define MAX_SEGMENTS 10
 #define DEBUG 1
 
 //Defines for reading files with lex.

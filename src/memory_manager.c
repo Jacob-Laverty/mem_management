@@ -1,10 +1,10 @@
 #include "memory_manager.h"
 
 void init_memory_manager() {
-  head = (MemoryNode*) malloc(sizeof(MemoryNode*)); 
+  mem_head = (MemoryNode*) malloc(sizeof(MemoryNode*)); 
 
-  head -> next = NULL;
-  head -> block = NULL;
+  mem_head -> next = NULL;
+  mem_head -> block = NULL;
 
   //Read in the inputs to actually setup the 
   //memory manager.
@@ -44,14 +44,23 @@ void init_memory_manager() {
           case FF_TOKEN:
             debug("Setting parameter to FF\n");
             mem_policy_parameter = FF;
+            //Set all of the params necessary for successfull
+            //memory init
+            return;
             break;
           case BF_TOKEN:
             debug("Setting parameter to BF\n");
             mem_policy_parameter = BF;
+            //Set all of the params necessary for successfull
+            //memory init
+            return;
             break;
           case WF_TOKEN:
             debug("Setting parameter to WF\n");
             mem_policy_parameter = WF;
+            //Set all of the params necessary for successfull
+            //memory init
+            return;
             break;
           default:
             //Need a default case because I'm not really sure
