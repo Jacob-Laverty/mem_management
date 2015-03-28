@@ -1,6 +1,6 @@
 Memory Size: 2000
 Memory Management Policy: VSP
-Policy Parameter: 0
+Policy Parameter: 1
 
 Process Id: 1
 Arrival Time: 0
